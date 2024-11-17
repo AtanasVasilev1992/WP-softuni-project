@@ -44,14 +44,6 @@ node_modules
 ### Themes ###
 # List the themes here #
 
-### Theme build files ###
-/wp-content/themes/*/node_modules
-/wp-content/themes/*/assets/dist/
-/wp-content/themes/*/assets-manifest.json
-/wp-content/themes/*/package-lock.json
-/wp-content/themes/*/inc/blocks/dist/
-/wp-content/themes/*/assets-manifest.json
-
 ### Plugins ###
 /wp-content/db.php
 
