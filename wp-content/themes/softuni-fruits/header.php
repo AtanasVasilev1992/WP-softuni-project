@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,18 +34,19 @@
 	<!-- responsive -->
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/responsive.css">
 
-    <?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -53,7 +55,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="#">
+							<a href="<?php echo get_home_url( '/' ); ?>">
 								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/fruits-logo.png" alt="">
 							</a>
 						</div>
@@ -62,12 +64,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Home</a>
-									<ul class="sub-menu">
-										<li><a href="#">Static Home</a></li>
-										<li><a href="#">Slider Home</a></li>
-									</ul>
-								</li>
+								<li class="current-list-item"><a href="<?php echo get_home_url( '/' ); ?>">Home</a></li>
 								<li><a href="#">About</a></li>
 								<li><a href="#">Pages</a>
 									<ul class="sub-menu">
@@ -112,7 +109,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-	
+
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
