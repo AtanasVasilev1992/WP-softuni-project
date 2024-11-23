@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
+                    <p>This is archive page.</p>
                     <h1><?php echo get_the_archive_title(); ?></h1>
                 </div>
             </div>
@@ -56,6 +57,17 @@
 
         <?php endif; ?>
 
+        <div class="row">
+            <div class="col">
+                <?php the_posts_pagination(array(
+                    'mid_size'  => 2,
+                    'prev_text' => __('Previous', 'textdomain'),
+                    'next_text' => __('Next', 'textdomain'),
+                )); ?>
+            </div>
+        </div>
+
     </div>
 
+    <?php fruits_display_latest_posts(); ?>
     <?php get_footer(); ?>
