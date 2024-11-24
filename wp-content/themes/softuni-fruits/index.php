@@ -175,11 +175,11 @@
 			<!--Content Column-->
 			<div class="content-column col-lg-6">
 				<h3><span class="orange-text">Deal</span> of the month</h3>
-				<h4>Hikan Strwaberry</h4>
+				<h4>Strawberry</h4>
 				<div class="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
 				<!--Countdown Timer-->
 				<div class="time-counter">
-					<div class="time-countdown clearfix" data-countdown="2024/12/31">
+					<div class="time-countdown clearfix" data-countdown="2024/12/25">
 						<div class="counter-column">
 							<div class="inner"><span class="count">00</span>Days</div>
 						</div>
