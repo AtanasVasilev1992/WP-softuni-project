@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name: SoftUni
- * Author: Nasko
+ * Plugin Name: SoftUni-Practice
+ * Author: Atanas Vasilev
  * Description: My first plugin!
  */
 
