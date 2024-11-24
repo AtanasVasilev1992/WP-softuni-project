@@ -31,7 +31,7 @@
 
                 <?php while (have_posts()) : the_post() ?>
                     <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
+                        <div id="post-id-<?php the_ID(); ?>" <?php post_class( 'single-product-item' ) ?>>
 
                             <?php if (has_post_thumbnail()) : ?>
 
