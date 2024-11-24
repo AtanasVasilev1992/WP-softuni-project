@@ -13,3 +13,23 @@ function softuni_enqueue_assets()
 function fruits_display_latest_posts( $number_of_posts = 3 ) {
     include 'latest-posts.php';
 };
+
+/**
+ * Adding extra class in body tag.
+ */
+
+function my_softuni_body_class( $classes ) {
+    $classes[] = 'my-softuni-test-class';
+
+    return $classes;
+};
+
+add_action( 'body_class' , 'my_softuni_body_class');
+
+
+/**
+ * This is main function to register navigation menus
+ */
+function softuni_navigation_menus() {
+    
+}
