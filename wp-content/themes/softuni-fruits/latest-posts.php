@@ -37,7 +37,7 @@ $latest_posts_query = new WP_Query($latest_posts_args);
                                 <span class="date"><i class="fas fa-calendar"></i> <?php echo get_the_date(); ?></span>
                             </p>
                             <p class="excerpt"><?php the_excerpt(); ?></p>
-                            <a href="<?php echo get_the_permalink(); ?>" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+                            <a href="<?php echo get_the_permalink(); ?>" class="boxed-btn">read more <i class="fas fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
