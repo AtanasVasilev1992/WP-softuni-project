@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Call to action with grid layout with products and link
- * Slug: twentytwentyfive/cta-grid-products-link
+ * Title: Call to action with grid layout with testimonials and link
+ * Slug: twentytwentyfive/cta-grid-testimonials-link
  * Categories: call-to-action, featured
  * Viewport width: 1400
  * Description: A call to action featuring product images.
