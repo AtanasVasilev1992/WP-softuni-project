@@ -88,31 +88,61 @@ function softuni_register_product_category_taxonomy() {
 
 add_action( 'init', 'softuni_register_product_category_taxonomy' );
 
+
 /**
  * Register meta box(es).
  */
-function products_register_meta_boxes_price() {
-	add_meta_box( 'product-price', __( 'Price for kg', 'softuni' ), 'softuni_product_price_callback', 'post' );
+function product_details_metabox() {
+    add_meta_box(
+        'product_details_metabox_id',       	// Unique ID for the metabox
+        'Product Price',                  	    // Title of the metabox
+        'product_details_metabox_callback', 	// Callback function that renders the metabox
+        'product',        					    // Post type where it will appear
+        'side',                         		// Context: where on the screen (side, normal, or advanced)
+        'default',                       		// Priority: default, high, low
+		array(
+			'__block_editor_compatible_meta_box' => true,
+			'__back_compat_meta_box'             => false,
+		)
+    );
 }
-add_action( 'add_meta_boxes', 'products_register_meta_boxes_price' );
+add_action( 'add_meta_boxes', 'product_details_metabox' );
 
-/**
- * Meta box display callback.
- *
- * @param WP_Post $post Current post object.
- */
-function softuni_product_price_callback( $post ) {
-	?>
-	<input name="price" id="name" class="product-item">
-	<?php
+
+function product_details_metabox_callback( $post ) {
+    // Add a nonce field for security
+    wp_nonce_field( 'product_details_metabox_nonce_action', 'product_details_metabox_nonce' );
+
+    $product_price = get_post_meta( $post->ID, 'product_price', true );
+
+    echo '<label for="product_price">Price: </label>';
+    echo '<input type="text" id="product_price" name="product_price" value="' . esc_attr( $product_price ) . '" style="width: 100%;" />';
 }
 
-/**
- * Save meta box content.
- *
- * @param int $post_id Post ID
- */
-function wpdocs_save_meta_box( $post_id ) {
-	// Save logic goes here. Don't forget to include nonce checks!
+
+function your_custom_save_metabox( $post_id ) {
+    // Check for nonce security
+    if ( ! isset( $_POST['product_details_metabox_nonce'] ) ||
+         ! wp_verify_nonce( $_POST['product_details_metabox_nonce'], 'product_details_metabox_nonce_action' ) ) {
+        return;
+    }
+
+    // Check for autosave or bulk edit
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    // Check user permissions
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+	if ( isset( $_POST['_inline_edit'] ) ) {
+		return;
+	}
+
+    if ( isset( $_POST['product_price'] ) ) {
+        update_post_meta( $post_id, 'product_price', sanitize_text_field( $_POST['product_price'] ) );
+    }
 }
-add_action( 'save_post', 'wpdocs_save_meta_box' );
+add_action( 'save_post', 'your_custom_save_metabox' );
