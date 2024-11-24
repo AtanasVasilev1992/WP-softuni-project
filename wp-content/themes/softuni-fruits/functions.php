@@ -31,5 +31,15 @@ add_action( 'body_class' , 'my_softuni_body_class');
  * This is main function to register navigation menus
  */
 function softuni_navigation_menus() {
-    
+    // register_nav_menus(
+    //     array(
+    //     'primary_menu'          => __( 'Primary Menu', 'textdomain' ),
+    //     'primary_menu_mobile'   => __( 'Primary Menu Mobile', 'textdomain' ),
+    //     'footer_menu_site_info' => __( 'Footer Menu Site Info', 'textdomain' ),
+    //     )
+    //     );
+
+    register_nav_menu( 'primary' , 'Primary menu');
 }
+
+add_action( 'after_setup_theme', 'softuni_navigation_menus', 0 );

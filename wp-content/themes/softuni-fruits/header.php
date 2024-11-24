@@ -55,7 +55,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="<?php echo get_home_url( '/' ); ?>">
+							<a href="<?php echo get_home_url('/'); ?>">
 								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/fruits-logo.png" alt="">
 							</a>
 						</div>
@@ -63,43 +63,24 @@
 
 						<!-- menu start -->
 						<nav class="main-menu">
-							<ul>
-								<li class="current-list-item"><a href="<?php echo get_home_url( '/' ); ?>">Home</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="#">404 page</a></li>
-										<li><a href="#">About</a></li>
-										<li><a href="#">Cart</a></li>
-										<li><a href="#">Check Out</a></li>
-										<li><a href="#">Contact</a></li>
-										<li><a href="#">News</a></li>
-										<li><a href="#">Shop</a></li>
-									</ul>
-								</li>
-								<li><a href="#">News</a>
-									<ul class="sub-menu">
-										<li><a href="#">News</a></li>
-										<li><a href="#">Single News</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="#">Shop</a></li>
-										<li><a href="#">Check Out</a></li>
-										<li><a href="#">Single Product</a></li>
-										<li><a href="#">Cart</a></li>
-									</ul>
-								</li>
-								<li>
-									<div class="header-icons">
-										<a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-									</div>
-								</li>
-							</ul>
+							<?php
+							// Wordpress Menu
+							$nav_menu_args = array(
+								'menu'				=> 'Primary menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+								'menu_class'		=> 'ul', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+								'container'			=> '', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+								'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+								'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+							);
+							wp_nav_menu( $nav_menu_args );
+							?>
+
+							<div class="header-icons">
+								<a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+								<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+							</div>
 						</nav>
+						
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>
 						<!-- menu end -->
@@ -129,21 +110,60 @@
 	</div>
 	<!-- end search area -->
 
-	<?php if ( is_front_page() ) : ?>
-<!-- home page slider -->
-<div class="homepage-slider">
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-1">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh & Organic</p>
-								<h1>Delicious Seasonal Fruits</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+	<?php if (is_front_page()) : ?>
+		<!-- home page slider -->
+		<div class="homepage-slider">
+			<!-- single home slider -->
+			<div class="single-homepage-slider homepage-bg-1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
+							<div class="hero-text">
+								<div class="hero-text-tablecell">
+									<p class="subtitle">Fresh & Organic</p>
+									<h1>Delicious Seasonal Fruits</h1>
+									<div class="hero-btns">
+										<a href="shop.html" class="boxed-btn">Fruit Collection</a>
+										<a href="contact.html" class="bordered-btn">Contact Us</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- single home slider -->
+			<div class="single-homepage-slider homepage-bg-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1 text-center">
+							<div class="hero-text">
+								<div class="hero-text-tablecell">
+									<p class="subtitle">Fresh Everyday</p>
+									<h1>100% Organic Collection</h1>
+									<div class="hero-btns">
+										<a href="shop.html" class="boxed-btn">Visit Shop</a>
+										<a href="contact.html" class="bordered-btn">Contact Us</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- single home slider -->
+			<div class="single-homepage-slider homepage-bg-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1 text-right">
+							<div class="hero-text">
+								<div class="hero-text-tablecell">
+									<p class="subtitle">Mega Sale Going On!</p>
+									<h1>Get December Discount</h1>
+									<div class="hero-btns">
+										<a href="shop.html" class="boxed-btn">Visit Shop</a>
+										<a href="contact.html" class="bordered-btn">Contact Us</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -151,44 +171,5 @@
 				</div>
 			</div>
 		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-center">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh Everyday</p>
-								<h1>100% Organic Collection</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1 text-right">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Mega Sale Going On!</p>
-								<h1>Get December Discount</h1>
-								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end home page slider -->
-<?php endif; ?>
+		<!-- end home page slider -->
+	<?php endif; ?>
