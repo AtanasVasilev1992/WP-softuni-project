@@ -1,19 +1,5 @@
 <?php get_header(); ?>
 
-<!-- breadcrumb-section -->
-<div class="breadcrumb-section breadcrumb-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <div class="breadcrumb-text">
-                    <p>This is archive page.</p>
-                    <h1><?php echo get_the_archive_title(); ?></h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end breadcrumb section -->
 
 <div class="product-section mt-150 mb-150">
     <div class="container">
@@ -35,7 +21,7 @@
 
                             <?php if (has_post_thumbnail()) : ?>
 
-                                <div class="product-image">
+                                <div class="single-latest-news">
                                     <a href="<?php echo get_the_permalink(); ?>">
                                         <?php the_post_thumbnail('post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
                                     </a>

@@ -72,7 +72,7 @@
 								'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
 								'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
 							);
-							wp_nav_menu( $nav_menu_args );
+							wp_nav_menu($nav_menu_args);
 							?>
 
 							<div class="header-icons">
@@ -80,7 +80,7 @@
 								<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 							</div>
 						</nav>
-						
+
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>
 						<!-- menu end -->
@@ -172,4 +172,26 @@
 			</div>
 		</div>
 		<!-- end home page slider -->
+	<?php endif; ?>
+
+	<?php if (! is_front_page()) : ?>
+		<!-- breadcrumb-section -->
+		<div class="breadcrumb-section breadcrumb-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 text-center">
+						<div class="breadcrumb-text">
+							<?php if ( is_archive() ) : ?>
+								<p><?php echo category_description(); ?></p>
+							    <h1><?php echo get_the_archive_title(); ?></h1>
+							<?php else : ?>
+								<p><?php echo category_description(); ?></p>
+								<h1><?php echo get_the_title(); ?></h1>
+							<?php endif ; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end breadcrumb section -->
 	<?php endif; ?>
