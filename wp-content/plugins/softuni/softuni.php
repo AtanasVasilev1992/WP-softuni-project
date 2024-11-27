@@ -15,5 +15,7 @@
  };
 
 //  var_dump( SOFTUNI_PLUGIN_ASSETS_URL ); die();
+
  require 'includes/cpt-products.php';
  require 'includes/cpt-testimonial.php';
+ require 'includes/functions.php';
