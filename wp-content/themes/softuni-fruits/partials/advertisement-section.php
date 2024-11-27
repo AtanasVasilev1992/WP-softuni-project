@@ -1,3 +1,14 @@
+<?php 
+// var_dump( $args );
+$top_title = $args[ 'top-sub_title' ];
+$title = $args[ 'heading' ];
+$title_2 = $args[ 'title_2' ];
+$image = $args[ 'image' ];
+$content = $args[ 'content' ];
+$cta_title = $args[ 'cta_title' ];
+$cta_url = $args[ 'cta_url' ];
+?>
+
 <!-- advertisement section -->
 <div class="abt-section mb-150">
 	<div class="container">
@@ -9,11 +20,22 @@
 			</div>
 			<div class="col-lg-6 col-md-12">
 				<div class="abt-text">
-					<p class="top-sub">Since Year 2024</p>
-					<h2>We are <span class="orange-text">Fruits</span></h2>
-					<p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-					<a href="about.html" class="boxed-btn mt-4">know more</a>
+					<?php if( ! empty( $top_title ) ) : ?>
+					<p class="top-sub"><?php echo esc_attr($top_title) ; ?></p>
+					<?php endif; ?>
+
+					<?php if( ! empty( $title && $title_2 ) ) : ?>
+					<h2><?php echo esc_attr($title) ; ?> <span class="orange-text"><?php echo esc_attr($title_2) ; ?></span></h2>
+					<?php endif ; ?>
+
+					<?php if( ! empty( $content ) ) : ?>
+					<p><?php echo $content ; ?></p>
+					
+					<?php endif; ?>
+
+					<?php if( ! empty( $cta_title && $cta_url ) ) : ?>
+					<a href="<?php echo esc_attr($cta_url) ; ?>" class="boxed-btn mt-4"><?php echo esc_attr($cta_title) ; ?></a>
+					<?php endif ;?>
 				</div>
 			</div>
 		</div>

@@ -10,8 +10,6 @@
 	<!-- title -->
 	<title><?php wp_title(); ?></title>
 
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
-
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicon.png">
 	<!-- google font -->
