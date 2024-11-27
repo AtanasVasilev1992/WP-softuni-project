@@ -1,0 +1,21 @@
+/**
+ * Theme Name: Twenty Twenty - four child theme
+ * Template:   twentytwentyfour
+ * Author: Atanas Vasilev
+ * Description: Our first child theme
+ * ...other header fields
+ */
+
+body {
+    background-color: rgb(140, 127, 255) !important;
+}
+
+;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: red !important;
+}
