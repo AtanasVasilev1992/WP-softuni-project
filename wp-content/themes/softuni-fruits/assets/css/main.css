@@ -2763,7 +2763,7 @@ table.order-details tbody td {
 /* My test */
 
 .single-product-img img {
-  max-width: 400px;
+  width: 400px;
   height: auto;
   aspect-ratio: auto;
 }
