@@ -12,10 +12,10 @@ $product_likes = get_post_meta(get_the_ID(), 'likes', true);
 	<div class="container">
 		<div class="row">
 
-			<?php if (has_post_thumbnail()) : ?>
+			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="col-md-5">
 					<div class="single-product-img">
-						<?php the_post_thumbnail('post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
+						<?php the_post_thumbnail( 'post-thumbnail', [ 'class' => '', 'title' => 'Feature image' ] ); ?>
 					</div>
 				</div>
 			<?php endif; ?>
@@ -23,11 +23,14 @@ $product_likes = get_post_meta(get_the_ID(), 'likes', true);
 			<div class="col-md-7">
 				<div class="single-product-content">
 					<h3><?php echo get_the_title(); ?></h3>
-
-					<!-- <div class="col-md-5">
-						<a href="#" class="like" id="prodict-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>">Like (<?php echo $product_likes; ?> likes)</a>
-					</div> -->
-
+					<?php if ( empty ( $product_price ) ) {
+						echo "<p> This product don't have likes yet!</p>";
+					}
+					?>
+					<?php if ( ! empty ( $product_price ) ) {
+						echo '<p> This product have ' . esc_attr($product_likes) . ' likes!</p>';
+					}
+					?>
 					<?php
 					if (empty($product_price)) {
 						echo '<p><span>There is no price yet!</span></p>';
@@ -51,8 +54,8 @@ $product_likes = get_post_meta(get_the_ID(), 'likes', true);
 					?>
 
 					<div>
-					<a href="#" class="cart-btn like" id="prodict-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>"><i class="fas fa-thumbs-up"></i> Like </a>
-					<p ><?php echo $product_likes; ?> likes</p>
+						<a href="#" class="cart-btn like" id="prodict-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>"><i class="fas fa-thumbs-up"></i> Like </a>
+
 					</div>
 				</div>
 			</div>
