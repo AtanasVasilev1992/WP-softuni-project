@@ -19,3 +19,4 @@
  require 'includes/cpt-products.php';
  require 'includes/cpt-testimonial.php';
  require 'includes/functions.php';
+ require 'includes/options-page.php';
