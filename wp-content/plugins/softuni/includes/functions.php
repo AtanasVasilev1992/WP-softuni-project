@@ -48,7 +48,7 @@ add_action('wp_ajax_nopriv_product_item_like', 'product_item_like');
 add_action('wp_ajax_product_item_like', 'product_item_like');
 
 /**
- * This is the callback function to display a product title with shortcode
+ * This is the callback function to display a product title with shortcode.
  */
 function display_product_title( $atts) {
     $atts = shortcode_atts( array(
@@ -80,3 +80,22 @@ function display_product_title( $atts) {
 }
 
 add_shortcode( 'display_product_title' , 'display_product_title');
+
+
+/**
+ * A custum function that filter our custum category arcive.
+ */
+function softuni_theme_category_archive_query( $query ) {
+    $softuni_options = get_option( 'softuni_my_custom_options' );
+    
+
+    if ( ! is_admin() && $query -> is_main_query() && is_category() ) {
+        // var_dump( $softuni_options); die;
+
+        if ( ! empty ( $softuni_options[ 'softunit_category_products_per_page' ] ) ) {
+            $query -> set( 'posts_per_page', esc_attr( $softuni_options[ 'softunit_category_products_per_page' ] ) );
+        }
+    }
+};
+
+add_action( 'pre_get_posts', 'softuni_theme_category_archive_query' );
