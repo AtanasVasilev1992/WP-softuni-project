@@ -11,8 +11,18 @@ add_post_type_support( 'excerpt' , array() );
 add_action( 'wp_enqueue_scripts' , 'softuni_enqueue_assets' );
 function softuni_enqueue_assets() {
     wp_enqueue_style( 'softuni', get_stylesheet_directory_uri() . '/style.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    
+    // From Header
+    wp_enqueue_style( 'main.css', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'all.min.css', get_stylesheet_directory_uri() . '/assets/css/all.min.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'bootstrap.min.css', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'owl.carousel.css', get_stylesheet_directory_uri() . '/assets/css/owl.carousel.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'magnific-popup.css', get_stylesheet_directory_uri() . '/assets/css/magnific-popup.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'animate.css', get_stylesheet_directory_uri() . '/assets/css/animate.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'meanmenu.min.css', get_stylesheet_directory_uri() . '/assets/css/meanmenu.min.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'responsive.css', get_stylesheet_directory_uri() . '/assets/css/responsive.css', array(), SOFTUNI_FRUITS_THEME_VER );
 
-    // From footer
+    // From Footer
     wp_enqueue_script( 'jquery-1.11.3', get_stylesheet_directory_uri() . '/assets/js/jquery-1.11.3.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_script( 'jquery-countdown', get_stylesheet_directory_uri() . '/assets/js/jquery.countdown.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
@@ -23,7 +33,7 @@ function softuni_enqueue_assets() {
     wp_enqueue_script( 'meanmenu', get_stylesheet_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_script( 'sticker', get_stylesheet_directory_uri() . '/assets/js/sticker.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    
+
 }
 function fruits_display_latest_posts( $number_of_posts = 3 ) {
     include 'latest-posts.php';

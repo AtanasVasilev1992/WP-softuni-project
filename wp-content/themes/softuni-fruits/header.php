@@ -16,22 +16,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.css">
 	
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/all.min.css">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/bootstrap/css/bootstrap.min.css">
-	<!-- owl carousel -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.carousel.css">
-	<!-- magnific popup -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/magnific-popup.css">
-	<!-- animate css -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/animate.css">
-	<!-- mean menu css -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/meanmenu.min.css">
-	<!-- main style -->
-	<!-- responsive -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/responsive.css">
 
 	<?php wp_head(); ?>
 </head>
@@ -62,22 +47,25 @@
 
 						<!-- menu start -->
 						<nav class="main-menu">
-							<?php
-							// Wordpress Menu
-							$nav_menu_args = array(
-								'menu'				=> 'Primary menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
-								'menu_class'		=> 'ul', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
-								'container'			=> '', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
-								'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
-								'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
-							);
-							wp_nav_menu($nav_menu_args);
-							?>
-
-							<div class="header-icons">
-								<a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
-								<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-							</div>
+							<ul>
+								<?php
+								// Wordpress Menu
+								$nav_menu_args = array(
+									'menu'              => 'Primary menu',
+									'menu_class'        => '',
+									'container'         => '',
+									'container_class'   => '',
+									'theme_location'    => 'primary',
+								);
+								wp_nav_menu($nav_menu_args);
+								?>
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+							</ul>
 						</nav>
 
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -109,6 +97,7 @@
 	</div>
 	<!-- end search area -->
 
+
 	<?php if (! is_front_page()) : ?>
 		<!-- breadcrumb-section -->
 		<div class="breadcrumb-section breadcrumb-bg">
@@ -116,13 +105,13 @@
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 text-center">
 						<div class="breadcrumb-text">
-							<?php if ( is_archive() ) : ?>
+							<?php if (is_archive()) : ?>
 								<p><?php echo category_description(); ?></p>
-							    <h1><?php echo get_the_archive_title(); ?></h1>
+								<h1><?php echo get_the_archive_title(); ?></h1>
 							<?php else : ?>
 								<p><?php echo category_description(); ?></p>
 								<h1><?php echo get_the_title(); ?></h1>
-							<?php endif ; ?>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>
