@@ -23,19 +23,25 @@ $slider_query = get_posts( $slider_args );
             <?php if ( $slider_background_class ) : ?>
                 <div class="single-homepage-slider <?php echo esc_html( $slider_background_class ); ?>">
             <?php else : ?>
-                <div class="single-homepage-slider">
+                <div class="single-homepage-slider homepage-bg-1">
             <?php endif; ?>
+
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
                             <div class="hero-text">
                                 <div class="hero-text-tablecell">
+                                    
                                     <?php if ( $slider_subtitle ) : ?>
                                         <p class="subtitle"><?php echo esc_html( $slider_subtitle ); ?></p>
+                                    <?php else : ?>
+                                        <p class="subtitle">Fresh & Organic</p>
                                     <?php endif; ?>
 
                                     <?php if ( $slider_title ) : ?>
                                         <h1><?php echo esc_html( $slider_title ); ?></h1>
+                                    <?php else : ?>
+                                        <h1>Delicious Seasonal Fruits</h1>
                                     <?php endif; ?>
 
                                     <div class="hero-btns">

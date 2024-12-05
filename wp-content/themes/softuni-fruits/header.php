@@ -109,12 +109,6 @@
 	</div>
 	<!-- end search area -->
 
-	<?php if ( is_front_page() ) : ?>
-
-		<?php get_template_part( 'partials/slider'  ) ; ?>
-
-	<?php endif; ?>
-
 	<?php if (! is_front_page()) : ?>
 		<!-- breadcrumb-section -->
 		<div class="breadcrumb-section breadcrumb-bg">

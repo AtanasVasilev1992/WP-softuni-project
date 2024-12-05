@@ -10,6 +10,8 @@ $fields = get_fields( get_the_ID() );
 
 <?php get_header(); ?>
 
+<?php get_template_part( 'partials/slider'  ) ; ?>
+
 <?php get_template_part( 'partials/feature' , 'list' ) ; ?>
 
 <?php get_template_part( 'partials/product', 'section' ) ; ?>
