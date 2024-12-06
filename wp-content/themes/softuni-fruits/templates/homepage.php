@@ -26,4 +26,6 @@ $fields = get_fields( get_the_ID() );
 
 <?php fruits_display_latest_posts(6); ?>
 
+<?php get_template_part( 'partials/contact' , 'form' ) ; ?>
+
 <?php get_footer(); ?>
