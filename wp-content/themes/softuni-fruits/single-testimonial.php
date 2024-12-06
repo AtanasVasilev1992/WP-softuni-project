@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'partials/page' , 'header' ) ; ?>
+
 <?php
 $id = get_the_ID();
 $testimonial_autor = get_field( 'autor', $id );

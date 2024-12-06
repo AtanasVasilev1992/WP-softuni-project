@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'partials/page' , 'header' ) ; ?>
+
 <?php
 $product_price = get_post_meta(get_the_ID(), 'product_price', true);
 

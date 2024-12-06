@@ -16,7 +16,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	
+
 
 	<?php wp_head(); ?>
 </head>
@@ -96,26 +96,3 @@
 		</div>
 	</div>
 	<!-- end search area -->
-
-
-	<?php if (! is_front_page()) : ?>
-		<!-- breadcrumb-section -->
-		<div class="breadcrumb-section breadcrumb-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2 text-center">
-						<div class="breadcrumb-text">
-							<?php if (is_archive()) : ?>
-								<p><?php echo category_description(); ?></p>
-								<h1><?php echo get_the_archive_title(); ?></h1>
-							<?php else : ?>
-								<p><?php echo category_description(); ?></p>
-								<h1><?php echo get_the_title(); ?></h1>
-							<?php endif; ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end breadcrumb section -->
-	<?php endif; ?>

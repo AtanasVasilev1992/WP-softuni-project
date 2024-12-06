@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part( 'partials/page' , 'header' ) ; ?>
+
 <!-- single product -->
 <div class="single-product mt-150 mb-150">
 	<div class="container">
