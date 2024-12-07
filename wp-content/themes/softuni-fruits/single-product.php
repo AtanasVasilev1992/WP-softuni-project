@@ -25,11 +25,11 @@ $product_likes = get_post_meta(get_the_ID(), 'likes', true);
 			<div class="col-md-7">
 				<div class="single-product-content">
 					<h3><?php echo get_the_title(); ?></h3>
-					<?php if ( empty ( $product_price ) ) {
+					<?php if ( empty ( $product_likes ) ) {
 						echo "<p> This product don't have likes yet!</p>";
 					}
 					?>
-					<?php if ( ! empty ( $product_price ) ) {
+					<?php if ( ! empty ( $product_likes ) ) {
 						echo '<p> This product have ' . esc_attr($product_likes) . ' likes!</p>';
 					}
 					?>

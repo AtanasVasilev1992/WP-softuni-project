@@ -2765,5 +2765,21 @@ table.order-details tbody td {
 .single-product-img img {
   width: 400px;
   height: auto;
-  aspect-ratio: auto;
+  aspect-ratio: 1/1;
+}
+
+.single-latest-news {
+  width: 400px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.wp-post-image {
+  width: 400px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+h3.single-product-href {
+  color: #051922 !important;
 }

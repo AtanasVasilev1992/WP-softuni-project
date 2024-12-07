@@ -26,12 +26,12 @@ $latest_posts_query = new WP_Query($latest_posts_args);
 
             <?php while( $latest_posts_query->have_posts() ) : $latest_posts_query->the_post() ; ?>
                 <div class="col-lg-4 col-md-6">
-                    <div class="single-latest-news">
+                    <div class="single-product-item">
                         <a href="<?php echo get_the_permalink(); ?>">
                         <?php the_post_thumbnail('post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
                         </a>
                         <div class="news-text-box">
-                            <h3><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <h3 class="single-product-href"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p class="blog-meta">
                                 <span class="author"><i class="fas fa-user"></i> <?php echo get_the_author_meta( 'nickname' ); ?></span>
                                 <span class="date"><i class="fas fa-calendar"></i> <?php echo get_the_date(); ?></span>

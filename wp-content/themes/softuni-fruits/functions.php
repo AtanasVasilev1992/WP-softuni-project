@@ -23,6 +23,7 @@ function softuni_enqueue_assets() {
     wp_enqueue_style( 'responsive.css', get_stylesheet_directory_uri() . '/assets/css/responsive.css', array(), SOFTUNI_FRUITS_THEME_VER );
 
     // From Footer
+    wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-1.11.3', get_stylesheet_directory_uri() . '/assets/js/jquery-1.11.3.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_script( 'jquery-countdown', get_stylesheet_directory_uri() . '/assets/js/jquery.countdown.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
@@ -35,8 +36,13 @@ function softuni_enqueue_assets() {
     wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
 
 }
+
 function fruits_display_latest_posts( $number_of_posts = 3 ) {
     include 'latest-posts.php';
+};
+
+function fruits_display_latest_products( $number_of_posts = 3 ) {
+    include 'partials/product-section.php';
 };
 
 /**

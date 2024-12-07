@@ -33,7 +33,7 @@
                             <h3><?php the_title(); ?></h3>
                             <p class="product-price"> <?php the_excerpt(); ?></p>
                             <p><?php echo get_the_date(); ?></p>
-                            <a href="<?php echo get_the_permalink(); ?>" class="cart-btn">Read more</a>
+                            <a href="<?php echo get_the_permalink(); ?>" class="cart-btn"><i class="fas fa-info"></i> Read more</a>
                         </div>
                     </div>
                 <?php endwhile; ?>

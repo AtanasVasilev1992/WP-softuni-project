@@ -45,8 +45,8 @@ $slider_query = get_posts( $slider_args );
                                     <?php endif; ?>
 
                                     <div class="hero-btns">
-                                        <a href="#" class="boxed-btn">Fruit Collection</a>
-                                        <a href="#" class="bordered-btn">Contact Us</a>
+                                        <a href="<?php echo site_url( '/product/' ); ?>" class="boxed-btn">Fruit Collection</a>
+                                        <a href="<?php echo site_url( '/contact-us/' ); ?>" class="bordered-btn">Contact Us</a>
                                     </div>
                                 </div>
                             </div>
