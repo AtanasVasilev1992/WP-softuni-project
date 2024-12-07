@@ -45,6 +45,10 @@ function fruits_display_latest_products( $number_of_posts = 3 ) {
     include 'partials/product-section.php';
 };
 
+function fruits_display_latest_testimonials( $number_of_posts = 3 ) {
+    include 'partials/testimonial-section.php';
+};
+
 /**
  * Adding extra class in body tag.
  */
