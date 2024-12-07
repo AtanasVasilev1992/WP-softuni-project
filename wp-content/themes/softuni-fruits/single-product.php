@@ -67,5 +67,5 @@ $product_likes = get_post_meta(get_the_ID(), 'likes', true);
 </div>
 <!-- end single product -->
 
-<?php fruits_display_latest_posts(); ?>
+<?php fruits_display_latest_products(); ?>
 <?php get_footer(); ?>

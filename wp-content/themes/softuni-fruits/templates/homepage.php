@@ -12,13 +12,13 @@ $fields = get_fields( get_the_ID() );
 
 <?php get_template_part( 'partials/slider'  ) ; ?>
 
-<?php get_template_part( 'partials/feature' , 'list' ) ; ?>
-
 <?php fruits_display_latest_products(3); ?>
 
-<?php get_template_part( 'partials/cart' , 'section' ) ; ?>
+<?php get_template_part( 'partials/feature' , 'list' ) ; ?>
 
 <?php fruits_display_latest_testimonials(3); ?>
+
+<?php get_template_part( 'partials/cart' , 'section' ) ; ?>
 
 <?php get_template_part( 'partials/advertisement' , 'section' , $fields ) ; ?>
 

@@ -10,7 +10,7 @@
 
 <?php get_template_part( 'partials/feature' , 'list' ) ; ?>
 
-<?php get_template_part( 'partials/testimonial' , 'section' ) ; ?>
+<?php fruits_display_latest_testimonials(3); ?>
 
 <?php get_template_part( 'partials/shop' , 'banner' ) ; ?>
 
