@@ -3,10 +3,10 @@
 <?php get_template_part( 'partials/page' , 'header' ) ; ?>
 
 <?php
-$product_price = get_post_meta(get_the_ID(), 'product_price', true);
+$product_price = get_post_meta( get_the_ID(), 'product_price', true);
 
-$product_category = get_post_meta(get_the_ID(), 'product-category', true);
-$product_likes = get_post_meta(get_the_ID(), 'likes', true);
+$product_category = get_post_meta( get_the_ID(), 'product-category', true);
+$product_likes = get_post_meta( get_the_ID(), 'likes', true);
 ?>
 
 <!-- single product -->
@@ -30,27 +30,26 @@ $product_likes = get_post_meta(get_the_ID(), 'likes', true);
 					}
 					?>
 					<?php if ( ! empty ( $product_likes ) ) {
-						echo '<p> This product have ' . esc_attr($product_likes) . ' likes!</p>';
+						echo '<p> This product have ' . esc_attr( $product_likes ) . ' likes!</p>';
 					}
 					?>
 					<?php
-					if (empty($product_price)) {
+					if ( empty($product_price)) {
 						echo '<p><span>There is no price yet!</span></p>';
 					}
 
-					if (! empty($product_price)) {
+					if ( ! empty( $product_price ) ) {
 						echo '<p class="single-product-pricing">';
-						echo '<span>Price Per Kg:</span>' . esc_attr($product_price);
+						echo '<span>Price Per Kg:</span>' . esc_attr( $product_price );
 						echo '</p>';
 					}
 					?>
 
 					<?php echo the_content(); ?>
 					<?php
-					// var_dump($product_category);
-					if (! empty($product_category)) {
+					if ( ! empty($product_category)) {
 						echo '<p>';
-						echo '<strong>Categories: </strong>' . esc_attr($product_category);
+						echo '<strong>Categories: </strong>' . esc_attr( $product_category );
 						echo '</p>';
 					}
 					?>

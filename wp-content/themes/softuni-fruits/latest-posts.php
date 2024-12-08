@@ -5,10 +5,10 @@ $latest_posts_args = array(
     'posts_per_page' => $number_of_posts,
 );
 
-$latest_posts_query = new WP_Query($latest_posts_args);
+$latest_posts_query = new WP_Query( $latest_posts_args );
 ?>
 
-<?php if ($latest_posts_query->have_posts()) : ?>
+<?php if ( $latest_posts_query -> have_posts() ) : ?>
     <!-- latest news -->
     <div class="latest-news pt-150 pb-150">
         <div class="container">
@@ -24,7 +24,7 @@ $latest_posts_query = new WP_Query($latest_posts_args);
 
             <div class="row">
 
-            <?php while( $latest_posts_query->have_posts() ) : $latest_posts_query->the_post() ; ?>
+            <?php while( $latest_posts_query -> have_posts() ) : $latest_posts_query -> the_post() ; ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="single-product-item">
                         <a href="<?php echo get_the_permalink(); ?>">

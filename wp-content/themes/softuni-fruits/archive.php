@@ -13,18 +13,18 @@
             </div>
         </div>
 
-        <?php if (have_posts()) : ?>
+        <?php if ( have_posts() ) : ?>
             <div class="row">
 
-                <?php while (have_posts()) : the_post() ?>
+                <?php while ( have_posts() ) : the_post() ?>
                     <div class="col-lg-4 col-md-6 text-center">
-                        <div id="post-id-<?php the_ID(); ?>" <?php post_class('single-product-item') ?>>
+                        <div id="post-id-<?php the_ID(); ?>" <?php post_class( 'single-product-item' ) ?>>
 
-                            <?php if (has_post_thumbnail()) : ?>
+                            <?php if ( has_post_thumbnail() ) : ?>
 
                                 <div class="single-latest-news">
                                     <a href="<?php echo get_the_permalink(); ?>">
-                                        <?php the_post_thumbnail('post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
+                                        <?php the_post_thumbnail( 'post-thumbnail', ['class' => '', 'title' => 'Feature image' ] ); ?>
                                     </a>
                                 </div>
 
@@ -45,12 +45,33 @@
         <?php endif; ?>
 
         <div class="row">
-            <div class="col">
-                <?php the_posts_pagination(array(
-                    'mid_size'  => 2,
-                    'prev_text' => __('Previous', 'textdomain'),
-                    'next_text' => __('Next', 'textdomain'),
-                )); ?>
+            <div class="col-lg-12 text-center">
+                <div class="pagination-wrap">
+                    <?php
+                    global $wp_query;
+                    $total_pages = $wp_query->max_num_pages;
+                    $current_page = max( 1, get_query_var( 'paged' ) );
+
+                    if ( $total_pages > 1 ) {
+                        echo '<ul>';
+                        if ( $current_page > 1 ) {
+                            echo '<li><a href="' . get_pagenum_link( $current_page - 1 ) . '">Prev</a></li>';
+                        }
+                        for ( $i = 1; $i <= $total_pages; $i++) {
+                            if ( $i == $current_page ) {
+                                echo '<li><a href="#" class="active">' . $i . '</a></li>';
+                            } else {
+                                echo '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a></li>';
+                            }
+                        }
+                        if ( $current_page < $total_pages ) {
+                            echo '<li><a href="' . get_pagenum_link( $current_page + 1 ) . '">Next</a></li>';
+                        }
+
+                        echo '</ul>';
+                    }
+                    ?>
+                </div>
             </div>
         </div>
 

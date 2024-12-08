@@ -39,7 +39,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="<?php echo get_home_url('/'); ?>">
+							<a href="<?php echo get_home_url( '/' ); ?>">
 								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/fruits-logo.png" alt="">
 							</a>
 						</div>
@@ -57,7 +57,7 @@
 									'container_class'   => '',
 									'theme_location'    => 'primary',
 								);
-								wp_nav_menu($nav_menu_args);
+								wp_nav_menu( $nav_menu_args );
 								?>
 								<li>
 									<div class="header-icons">
@@ -87,7 +87,7 @@
                 <div class="search-bar">
                     <div class="search-bar-tablecell">
                         <h3>Search For:</h3>
-                        <form action="<?php echo esc_url(home_url('/')); ?>" method="get">
+                        <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
                             <input type="text" name="s" id="ajax-search-input" placeholder="Keywords" value="<?php echo get_search_query(); ?>">
                             <button type="submit" id="ajax-search-button">Search <i class="fas fa-search"></i></button>
                         </form>

@@ -7,10 +7,10 @@
 	<div class="container">
 		<div class="row">
 
-			<?php if (has_post_thumbnail()) : ?>
+			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="col-md-5">
 					<div class="single-latest-news">
-						<?php the_post_thumbnail('post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
+						<?php the_post_thumbnail( 'post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
 					</div>
 				</div>
 			<?php endif; ?>
