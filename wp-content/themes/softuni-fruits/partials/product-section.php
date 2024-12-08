@@ -5,10 +5,10 @@ $latest_products_args = array(
 	'posts_per_page' => $number_of_posts,
 );
 
-$latest_products_query = new WP_Query($latest_products_args);
+$latest_products_query = new WP_Query( $latest_products_args );
 ?>
 
-<?php if ($latest_products_query->have_posts()) : ?>
+<?php if ( $latest_products_query -> have_posts() ) : ?>
 	<!-- product section -->
 	<div class="product-section mt-150 mb-150">
 		<div class="container">
@@ -22,20 +22,20 @@ $latest_products_query = new WP_Query($latest_products_args);
 			</div>
 
 			<div class="row">
-				<?php while ($latest_products_query->have_posts()) : $latest_products_query->the_post(); ?>
-				<?php $product_price = get_post_meta(get_the_ID(), 'product_price', true); ?>
+				<?php while ( $latest_products_query -> have_posts() ) : $latest_products_query -> the_post(); ?>
+				<?php $product_price = get_post_meta( get_the_ID(), 'product_price', true); ?>
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="single-product-item">
 							<div class="product-image">
 								<a href="<?php echo get_the_permalink(); ?>">
-								<?php the_post_thumbnail('post-thumbnail', ['class' => '', 'title' => 'Feature image']); ?>
+								<?php the_post_thumbnail( 'post-thumbnail', ['class' => '', 'title' => 'Feature image'] ); ?>
 								</a>
 							</div>
 							<h3>
 								<?php the_title(); ?>
 							</h3>
 							<p class="product-price">
-								<span>Per Kg</span> <?php echo esc_attr($product_price); ?>
+								<span>Per Kg</span> <?php echo esc_attr( $product_price ); ?>
 							</p>
 							<a href="<?php echo get_the_permalink(); ?>" class="cart-btn">
 								<i class="fas fa-info"></i> Read more

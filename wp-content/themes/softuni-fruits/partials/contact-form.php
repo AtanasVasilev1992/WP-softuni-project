@@ -44,19 +44,14 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Намиране на формуляра
-        const form = document.getElementById("fruitkha-contact");
+    document.addEventListener( "DOMContentLoaded", function () {
+        const form = document.getElementById( "fruitkha-contact" );
 
-        form.addEventListener("submit", function (event) {
-            // Предотвратяване на рефреша
+        form.addEventListener( "submit", function ( event ) {
             event.preventDefault();
 
-            // Показване на съобщение за успех
-            const formStatus = document.getElementById("form_status");
+            const formStatus = document.getElementById( "form_status" );
             formStatus.innerHTML = '<p style="color: green; font-weight: bold;">Thank you for sending this message! We will get back to you shortly.</p>';
-
-            // (По избор) Изчистване на формата
             form.reset();
         });
     });

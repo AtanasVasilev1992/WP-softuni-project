@@ -15,9 +15,9 @@ $slider_query = get_posts( $slider_args );
             <?php
             $slider_id = $slider->ID;
 
-            $slider_background_class = get_field('background_class', $slider_id);
-            $slider_title = get_field('slider_title', $slider_id);
-            $slider_subtitle = get_field('slider_subtitle', $slider_id);
+            $slider_background_class = get_field( 'background_class', $slider_id );
+            $slider_title = get_field( 'slider_title', $slider_id );
+            $slider_subtitle = get_field( 'slider_subtitle', $slider_id );
             ?>
 
             <?php if ( $slider_background_class ) : ?>

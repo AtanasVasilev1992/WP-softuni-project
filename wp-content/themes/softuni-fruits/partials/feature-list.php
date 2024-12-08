@@ -1,6 +1,6 @@
 <?php
-$features_query = new WP_Query(array(
-	'post_type' => 'feature',
+$features_query = new WP_Query( array(
+	'post_type'      => 'feature',
 	'posts_per_page' => -1
 ));
 
@@ -11,18 +11,18 @@ $features_query = new WP_Query(array(
 	<div class="container">
 		<div class="row">
 			<?php 
-			if ($features_query->have_posts()) :
-				while ($features_query->have_posts()) : $features_query->the_post();
-					$feature_class = get_post_meta(get_the_ID(), '_feature_css_class', true);
-					$feature_icon = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+			if ( $features_query -> have_posts() ) :
+				while ( $features_query -> have_posts() ) : $features_query -> the_post();
+					$feature_class = get_post_meta( get_the_ID(), '_feature_css_class', true);
+					$feature_icon = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail');
 			?>
 					<div class="col-lg-4 col-md-6 mb-4 mb-lg-0 ">
 						<div class="list-box d-flex align-items-center">
 							<div class="list-icon">
-								<?php if ($feature_icon) : ?>
-									<img src="<?php echo esc_url($feature_icon); ?>" alt="<?php the_title(); ?>">
+								<?php if ( $feature_icon ) : ?>
+									<img src="<?php echo esc_url( $feature_icon ); ?>" alt="<?php the_title(); ?>">
 								<?php else : ?>
-									<i class="fas <?php echo esc_attr($feature_class); ?>"></i>
+									<i class="fas <?php echo esc_attr( $feature_class ); ?>"></i>
 								<?php endif; ?>
 							</div>
 							<div class="content">

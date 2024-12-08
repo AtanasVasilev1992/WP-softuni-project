@@ -21,11 +21,11 @@ $cta_url = $args[ 'cta_url' ];
 			<div class="col-lg-6 col-md-12">
 				<div class="abt-text">
 					<?php if( ! empty( $top_title ) ) : ?>
-					<p class="top-sub"><?php echo esc_attr($top_title) ; ?></p>
+					<p class="top-sub"><?php echo esc_attr( $top_title ) ; ?></p>
 					<?php endif; ?>
 
 					<?php if( ! empty( $title && $title_2 ) ) : ?>
-					<h2><?php echo esc_attr($title) ; ?> <span class="orange-text"><?php echo esc_attr($title_2) ; ?></span></h2>
+					<h2><?php echo esc_attr( $title ) ; ?> <span class="orange-text"><?php echo esc_attr( $title_2 ) ; ?></span></h2>
 					<?php endif ; ?>
 
 					<?php if( ! empty( $content ) ) : ?>
@@ -34,7 +34,7 @@ $cta_url = $args[ 'cta_url' ];
 					<?php endif; ?>
 
 					<?php if( ! empty( $cta_title && $cta_url ) ) : ?>
-					<a href="<?php echo esc_attr($cta_url) ; ?>" class="boxed-btn mt-4"><?php echo esc_attr($cta_title) ; ?></a>
+					<a href="<?php echo esc_attr( $cta_url ) ; ?>" class="boxed-btn mt-4"><?php echo esc_attr( $cta_title ) ; ?></a>
 					<?php endif ;?>
 				</div>
 			</div>
