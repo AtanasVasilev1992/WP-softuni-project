@@ -12,6 +12,8 @@
 
 <?php fruits_display_latest_testimonials(3); ?>
 
+<?php get_template_part( 'partials/cart' , 'section' ) ; ?>
+
 <?php get_template_part( 'partials/shop' , 'banner' ) ; ?>
 
 <?php fruits_display_latest_posts(6); ?>

@@ -22,3 +22,4 @@
  require 'includes/cpt-banner.php';
  require 'includes/functions.php';
  require 'includes/options-page.php';
+ require 'includes/ajax-search.php';

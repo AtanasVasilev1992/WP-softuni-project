@@ -129,3 +129,11 @@ function softuni_register_sidebars() {
     );
 }
 add_action( 'widgets_init', 'softuni_register_sidebars' );
+
+function custom_search_query($query) {
+    if ($query->is_search() && !is_admin()) {
+        $query->set('posts_per_page', 10);
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'custom_search_query');
