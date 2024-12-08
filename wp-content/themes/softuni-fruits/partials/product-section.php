@@ -45,6 +45,11 @@ $latest_products_query = new WP_Query($latest_products_args);
 				<?php endwhile; ?>
 			</div>
 		</div>
+		<div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="<?php echo site_url( '/product/' ); ?>" class="boxed-btn">More News</a>
+                </div>
+            </div>
 	</div>
 	<!-- end product section -->
 <?php endif; ?>

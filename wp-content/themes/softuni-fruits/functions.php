@@ -25,15 +25,15 @@ function softuni_enqueue_assets() {
     // From Footer
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-1.11.3', get_stylesheet_directory_uri() . '/assets/js/jquery-1.11.3.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
-    wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'jquery-countdown', get_stylesheet_directory_uri() . '/assets/js/jquery.countdown.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/jquery.isotope-3.0.6.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/assets/js/waypoints.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'magnific-popup', get_stylesheet_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'meanmenu', get_stylesheet_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'sticker', get_stylesheet_directory_uri() . '/assets/js/sticker.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
-    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'jquery-countdown', get_stylesheet_directory_uri() . '/assets/js/jquery.countdown.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/jquery.isotope-3.0.6.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'waypoints', get_stylesheet_directory_uri() . '/assets/js/waypoints.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'magnific-popup', get_stylesheet_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'meanmenu', get_stylesheet_directory_uri() . '/assets/js/jquery.meanmenu.min.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'sticker', get_stylesheet_directory_uri() . '/assets/js/sticker.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
+    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), SOFTUNI_FRUITS_THEME_VER , true);
 
 }
 

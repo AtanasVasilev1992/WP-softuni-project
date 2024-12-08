@@ -46,7 +46,7 @@ $latest_posts_query = new WP_Query($latest_posts_args);
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a href="news.html" class="boxed-btn">More News</a>
+                    <a href="<?php echo site_url( '/2024/' ); ?>" class="boxed-btn">More News</a>
                 </div>
             </div>
         </div>
