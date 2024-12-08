@@ -35,10 +35,29 @@
 					</div>
 					<div class="contact-form-box">
 						<h4><i class="fas fa-address-book"></i> Contact</h4>
-						<p>Phone: +359 88 222 3333 <br> Email: support@fruits.com</p>
+						<p>Phone: +359 88 222 3333 <br> Email: fruits2024@abv.bg</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Намиране на формуляра
+        const form = document.getElementById("fruitkha-contact");
+
+        form.addEventListener("submit", function (event) {
+            // Предотвратяване на рефреша
+            event.preventDefault();
+
+            // Показване на съобщение за успех
+            const formStatus = document.getElementById("form_status");
+            formStatus.innerHTML = '<p style="color: green; font-weight: bold;">Thank you for sending this message! We will get back to you shortly.</p>';
+
+            // (По избор) Изчистване на формата
+            form.reset();
+        });
+    });
+</script>

@@ -8,7 +8,7 @@ Author: Atanas Vasilev
 
 if ( ! defined ( 'ABSPATH' ) ) exit; // Prevent direct access
 
-class MyAJAXSearch {
+class My_AJAX_Search {
     public function __construct() {
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
         add_action( 'wp_ajax_ajax_search', [ $this, 'ajax_search_handler' ] );
@@ -22,7 +22,6 @@ class MyAJAXSearch {
             'nonce'    => wp_create_nonce( 'ajax_search_nonce' )
         ]);
         
-        // wp_enqueue_style('my-ajax-search-style', plugin_dir_url(__FILE__) . 'assets/css/ajax-search.css');
     }
 
     public function ajax_search_handler() {
@@ -56,4 +55,4 @@ class MyAJAXSearch {
     }
 }
 
-new MyAJAXSearch();
+new My_AJAX_Search();
