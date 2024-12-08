@@ -34,19 +34,19 @@ function softuni_register_product_cpt() {
 	);
 
 	$args = array(
-		'labels'             => $labels,
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'product' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-        'show_in_rest'       => true,
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		'labels'                => $labels,
+		'public'                => true,
+		'publicly_queryable'    => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'query_var'             => true,
+		'rewrite'               => array( 'slug' => 'product' ),
+		'capability_type'       => 'post',
+		'has_archive'           => true,
+		'hierarchical'          => false,
+		'menu_position'         => null,
+        'show_in_rest'          => true,
+		'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
 	);
 
 	register_post_type( 'product', $args );
@@ -94,12 +94,12 @@ add_action( 'init', 'softuni_register_product_category_taxonomy' );
  */
 function product_details_metabox() {
     add_meta_box(
-        'product_details_metabox_id',       	// Unique ID for the metabox
+        'product_details_metabox_id',         	// Unique ID for the metabox
         'Product Price',                  	    // Title of the metabox
-        'product_details_metabox_callback', 	// Callback function that renders the metabox
+        'product_details_metabox_callback',   	// Callback function that renders the metabox
         'product',        					    // Post type where it will appear
-        'side',                         		// Context: where on the screen (side, normal, or advanced)
-        'default',                       		// Priority: default, high, low
+        'side',                         	  	// Context: where on the screen (side, normal, or advanced)
+        'default',                       	  	// Priority: default, high, low
 		array(
 			'__block_editor_compatible_meta_box' => true,
 			'__back_compat_meta_box'             => false,

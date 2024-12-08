@@ -19,40 +19,49 @@ function softuni_plugin_enqueue_assets() {
     );
 }
 
-add_action('wp_enqueue_scripts', 'softuni_plugin_enqueue_assets');
+add_action( 'wp_enqueue_scripts', 'softuni_plugin_enqueue_assets' );
 
 
 /**
  * This is our dynamic function that handle AJAX function for upvote.
  */
 function product_item_like() {
-    // TODO: try to make a cookie check for preventing multi likes
-    // TODO: try to make some different logic to show something dynamic... -> 
+    if ( isset( $_COOKIE[ 'liked_product_' . $_POST[ 'product_id' ] ] ) ) {
+        wp_send_json_error( 'You have already liked this!' );
+        die();
+    }
 
-    $id = esc_attr( $_POST[ 'product_id' ] ) ;
-    // var_dump( $_POST );
-    // var_dump( $id );
+    $id = esc_attr( $_POST['product_id' ] );
     
-    $like_number = get_post_meta( $id, 'likes', true );
-    if ( empty ( $like_number ) ) {
-        $like_number = 0 ;
-    };
+    $like_number = get_post_meta( $id, 'likes', true);
+    if ( empty( $like_number ) ) {
+        $like_number = 0;
+    }
+    
+    $new_like_count = $like_number + 1;
 
-    update_post_meta( $id, 'likes', $like_number + 1 );
+    update_post_meta( $id, 'likes', $new_like_count );
+
+    setcookie( 'liked_product_' . $id, 'true', time() + (30 * DAY_IN_SECONDS), COOKIEPATH, COOKIE_DOMAIN);
+
+    wp_send_json_success( array(
+        'likes' => $new_like_count
+    ));
+
     var_dump( $like_number );
     die();
 
 }
 
-add_action('wp_ajax_nopriv_product_item_like', 'product_item_like');
-add_action('wp_ajax_product_item_like', 'product_item_like');
+add_action( 'wp_ajax_nopriv_product_item_like', 'product_item_like' );
+add_action( 'wp_ajax_product_item_like', 'product_item_like' );
 
 /**
  * This is the callback function to display a product title with shortcode.
  */
-function display_product_title( $atts) {
+function display_product_title( $atts ) {
     $atts = shortcode_atts( array(
-		'id' => 'id',
+		'id'         => 'id',
         'show_image' => '',
 	), $atts, 'bartag' );
 
@@ -66,7 +75,7 @@ function display_product_title( $atts) {
 
     $content = '<div class="shortcode-class">';
 
-    if ( ! empty($title)) {
+    if ( ! empty( $title ) ) {
         $content .= $title ;
     }
 
@@ -79,7 +88,7 @@ function display_product_title( $atts) {
     return $content;
 }
 
-add_shortcode( 'display_product_title' , 'display_product_title');
+add_shortcode( 'display_product_title' , 'display_product_title' );
 
 
 /**

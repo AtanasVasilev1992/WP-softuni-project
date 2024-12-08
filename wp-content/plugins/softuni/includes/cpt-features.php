@@ -1,12 +1,12 @@
 <?php
 
-if (! class_exists( 'Softuni_Feature')) :
+if (! class_exists( 'Softuni_Feature' ) ) :
 	class Softuni_Feature {
 		public function __construct() {
-			add_action('init', array($this, 'softuni_register_feature_cpt'));
+			add_action( 'init', array( $this, 'softuni_register_feature_cpt' ) );
 			
-			add_action('add_meta_boxes', array($this, 'add_feature_class_meta_box'));
-			add_action('save_post', array($this, 'save_feature_class_meta'));
+			add_action( 'add_meta_boxes', array( $this, 'add_feature_class_meta_box' ) );
+			add_action( 'save_post', array( $this, 'save_feature_class_meta' ) );
 		}
 
 		/**
@@ -43,22 +43,22 @@ if (! class_exists( 'Softuni_Feature')) :
 			);
 
 			$args = array(
-				'labels'             => $labels,
-				'public'             => true,
-				'publicly_queryable' => true,
-				'show_ui'            => true,
-				'show_in_menu'       => true,
-				'query_var'          => true,
-				'rewrite'            => array('slug' => 'feature'),
-				'capability_type'    => 'post',
-				'has_archive'        => true,
-				'hierarchical'       => false,
-				'menu_position'      => null,
-				'show_in_rest'       => true,
-				'supports'           => array('title', 'editor', 'thumbnail'),
+				'labels'                => $labels,
+				'public'                => true,
+				'publicly_queryable'    => true,
+				'show_ui'               => true,
+				'show_in_menu'          => true,
+				'query_var'             => true,
+				'rewrite'               => array( 'slug' => 'feature' ),
+				'capability_type'       => 'post',
+				'has_archive'           => true,
+				'hierarchical'          => false,
+				'menu_position'         => null,
+				'show_in_rest'          => true,
+				'supports'              => array( 'title', 'editor', 'thumbnail' ),
 			);
 
-			register_post_type('feature', $args);
+			register_post_type( 'feature', $args );
 		}
 
 		/**
@@ -68,7 +68,7 @@ if (! class_exists( 'Softuni_Feature')) :
 			add_meta_box(
 				'feature_class_meta_box',   
 				'Feature CSS Class',                
-				array($this, 'render_class_meta_box'), 
+				array( $this, 'render_class_meta_box' ), 
 				'feature',                          
 				'side',                             
 				'default'                           
@@ -78,16 +78,16 @@ if (! class_exists( 'Softuni_Feature')) :
 		/**
 		 * Display the meta box with the field for the class.
 		 */
-		public function render_class_meta_box($post) {
-			$feature_class = get_post_meta($post->ID, '_feature_css_class', true);
+		public function render_class_meta_box( $post ) {
+			$feature_class = get_post_meta( $post -> ID, '_feature_css_class', true );
 
-			wp_nonce_field('feature_class_nonce', 'feature_class_nonce');
+			wp_nonce_field( 'feature_class_nonce', 'feature_class_nonce' );
 			?>
 			<label for="feature_css_class">CSS Class:</label>
 			<input type="text" 
 				   id="feature_css_class" 
 				   name="feature_css_class" 
-				   value="<?php echo esc_attr($feature_class); ?>" 
+				   value="<?php echo esc_attr( $feature_class ); ?>" 
 				   style="width:100%;"
 			/>
 			<?php
@@ -96,19 +96,19 @@ if (! class_exists( 'Softuni_Feature')) :
 		/**
 		 * Save value of meta field.
 		 */
-		public function save_feature_class_meta($post_id) {
-			if (!isset($_POST['feature_class_nonce']) || 
-				!wp_verify_nonce($_POST['feature_class_nonce'], 'feature_class_nonce')) {
+		public function save_feature_class_meta( $post_id ) {
+			if ( ! isset( $_POST[ 'feature_class_nonce' ] ) || 
+				! wp_verify_nonce( $_POST[ 'feature_class_nonce' ], 'feature_class_nonce' ) ) {
 				return;
 			}
 
-			if (!current_user_can('edit_post', $post_id)) {
+			if ( ! current_user_can( 'edit_post' , $post_id ) ) {
 				return;
 			}
 
-			if (isset($_POST['feature_css_class'])) {
-				$feature_class = sanitize_text_field($_POST['feature_css_class']);
-				update_post_meta($post_id, '_feature_css_class', $feature_class);
+			if ( isset( $_POST[ 'feature_css_class' ] ) ) {
+				$feature_class = sanitize_text_field( $_POST[ 'feature_css_class' ] );
+				update_post_meta( $post_id, '_feature_css_class', $feature_class);
 			}
 		}
 	}

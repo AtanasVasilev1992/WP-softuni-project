@@ -3,7 +3,7 @@
 if (! class_exists( 'Softuni_Testimonial')) :
 	class Softuni_Testimonial {
 		public function __construct() {
-			add_action('init', array($this, 'softuni_register_testimonial_cpt'));
+			add_action( 'init', array($this, 'softuni_register_testimonial_cpt' ) );
 		}
 
 		/**
@@ -40,22 +40,22 @@ if (! class_exists( 'Softuni_Testimonial')) :
 			);
 
 			$args = array(
-				'labels'             => $labels,
-				'public'             => true,
-				'publicly_queryable' => true,
-				'show_ui'            => true,
-				'show_in_menu'       => true,
-				'query_var'          => true,
-				'rewrite'            => array('slug' => 'testimonial'),
-				'capability_type'    => 'post',
-				'has_archive'        => true,
-				'hierarchical'       => false,
-				'menu_position'      => null,
-				'show_in_rest'       => true,
-				'supports'           => array('title', 'editor', 'thumbnail'),
+				'labels'                => $labels,
+				'public'                => true,
+				'publicly_queryable'    => true,
+				'show_ui'               => true,
+				'show_in_menu'          => true,
+				'query_var'             => true,
+				'rewrite'               => array( 'slug' => 'testimonial' ),
+				'capability_type'       => 'post',
+				'has_archive'           => true,
+				'hierarchical'          => false,
+				'menu_position'         => null,
+				'show_in_rest'          => true,
+				'supports'              => array( 'title', 'editor', 'thumbnail' ),
 			);
 
-			register_post_type('testimonial', $args);
+			register_post_type( 'testimonial', $args );
 		}
 	};
 
