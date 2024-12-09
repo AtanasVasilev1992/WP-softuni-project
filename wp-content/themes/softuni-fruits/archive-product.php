@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'partials/page' , 'header' ) ; ?>
+<?php get_template_part('partials/page', 'header'); ?>
 
 <div class="product-section mt-150 mb-150">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
-                    <h3><span class="orange-text">Latest </span> Posts</h3>
+                    <h3><span class="orange-text">Latest </span> Products</h3>
 
                 </div>
             </div>
@@ -34,7 +34,7 @@
                             <h3><?php the_title(); ?></h3>
                             <p class="product-price"> <?php the_excerpt(); ?></p>
                             <p><?php echo get_the_date(); ?></p>
-                            <a href="<?php echo get_the_permalink(); ?>" class="cart-btn">Read more</a>
+                            <a href="<?php echo get_the_permalink(); ?>" class="cart-btn"><i class="fas fa-info"></i> Read more</a>
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -76,8 +76,7 @@
             </div>
         </div>
 
-
     </div>
+</div>
 
-    <?php fruits_display_latest_posts(); ?>
-    <?php get_footer(); ?>
+<?php get_footer(); ?>

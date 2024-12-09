@@ -35,7 +35,7 @@ $latest_products_query = new WP_Query( $latest_products_args );
 							<?php endif; ?>
 
 							<?php if ( ! empty( the_title() ) ) : ?>
-							<h3><?php the_title(); ?></h3>
+							    <h3><?php the_title(); ?></h3>
 							<?php endif; ?>
 
 							<p class="product-price">

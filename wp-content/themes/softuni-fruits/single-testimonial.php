@@ -14,7 +14,7 @@ $testimonial_image = get_field( 'autor_image', $id );
 	<div class="container">
 		<div class="row">
 
-			<?php if( ! empty( $testimonial_image ) ): ?>
+			<?php if( ! empty( $testimonial_image ) ) : ?>
 				<div class="col-md-5">
 					<div class="single-product-img">
 						<img src="<?php echo esc_attr( $testimonial_image ); ?>" >
@@ -25,15 +25,15 @@ $testimonial_image = get_field( 'autor_image', $id );
 			<div class="col-md-7">
 				<div class="single-product-content">
 					<?php if( empty( $testimonial_autor ) ) : ?>
-					<h3><?php echo get_the_title(); ?></h3>
+					    <h3><?php echo get_the_title(); ?></h3>
 					<?php endif; ?>
 
 					<?php if( ! empty( $testimonial_autor ) ): ?>
-					<h3><?php echo esc_attr( $testimonial_autor); ?></h3>
+					    <h3><?php echo esc_attr( $testimonial_autor); ?></h3>
 					<?php endif; ?>
 
 					<?php if( ! empty( $testimonial_autor_job ) ) : ?>
-					<p><?php echo esc_attr( $testimonial_autor_job ); ?></p>
+					    <p><?php echo esc_attr( $testimonial_autor_job ); ?></p>
 					<?php endif; ?>
 
 					<?php echo the_content(); ?>

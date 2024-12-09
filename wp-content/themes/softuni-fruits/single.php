@@ -17,7 +17,11 @@
 
 			<div class="col-md-7">
 				<div class="single-product-content">
-					<h3><?php echo get_the_title(); ?></h3>
+					
+				    <?php if ( ! empty( get_the_title() ) ) : ?>
+                        <h3><?php get_the_title(); ?></h3>
+                    <?php endif; ?>
+
 					<?php echo the_content(); ?>
 				</div>
 			</div>

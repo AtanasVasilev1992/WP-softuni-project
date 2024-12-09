@@ -31,6 +31,7 @@
 
                             <?php endif; ?>
 
+                            
                             <h3><?php the_title(); ?></h3>
                             <p class="product-price"> <?php the_excerpt(); ?></p>
                             <p><?php echo get_the_date(); ?></p>
