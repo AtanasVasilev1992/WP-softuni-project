@@ -34,7 +34,7 @@ $product_likes = get_post_meta( get_the_ID(), 'likes', true);
 					}
 					?>
 					<?php
-					if ( empty($product_price)) {
+					if ( empty( $product_price ) ) {
 						echo '<p><span>There is no price yet!</span></p>';
 					}
 
@@ -47,7 +47,7 @@ $product_likes = get_post_meta( get_the_ID(), 'likes', true);
 
 					<?php echo the_content(); ?>
 					<?php
-					if ( ! empty($product_category)) {
+					if ( ! empty( $product_category ) ) {
 						echo '<p>';
 						echo '<strong>Categories: </strong>' . esc_attr( $product_category );
 						echo '</p>';
