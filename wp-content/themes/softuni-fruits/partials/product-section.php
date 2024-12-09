@@ -26,14 +26,18 @@ $latest_products_query = new WP_Query( $latest_products_args );
 				<?php $product_price = get_post_meta( get_the_ID(), 'product_price', true); ?>
 					<div class="col-lg-4 col-md-6 text-center">
 						<div class="single-product-item">
-							<div class="product-image">
-								<a href="<?php echo get_the_permalink(); ?>">
-								<?php the_post_thumbnail( 'post-thumbnail', ['class' => '', 'title' => 'Feature image'] ); ?>
-								</a>
-							</div>
-							<h3>
-								<?php the_title(); ?>
-							</h3>
+							<?php if ( ! empty( the_post_thumbnail() ) ) : ?>
+							    <div class="product-image">
+								    <a href="<?php echo get_the_permalink(); ?>">
+								    <?php the_post_thumbnail( 'post-thumbnail', ['class' => '', 'title' => 'Feature image'] ); ?>
+								    </a>
+							    </div>
+							<?php endif; ?>
+
+							<?php if ( ! empty( the_title() ) ) : ?>
+							<h3><?php the_title(); ?></h3>
+							<?php endif; ?>
+
 							<p class="product-price">
 								<span>Per Kg</span> <?php echo esc_attr( $product_price ); ?>
 							</p>

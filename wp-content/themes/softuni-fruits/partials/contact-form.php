@@ -51,7 +51,7 @@
             event.preventDefault();
 
             const formStatus = document.getElementById( "form_status" );
-            formStatus.innerHTML = '<p style="color: green; font-weight: bold;">Thank you for sending this message! We will get back to you shortly.</p>';
+            formStatus.innerHTML = '<p style="color: green; font-weight: bold;">Thank you for sending this message!</p>';
             form.reset();
         });
     });

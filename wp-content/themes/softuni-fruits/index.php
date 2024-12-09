@@ -23,7 +23,7 @@
 
                             <?php if ( has_post_thumbnail() ) : ?>
 
-                                <div class="single-latest-news">
+                                <div class="single-product">
                                     <a href="<?php echo get_the_permalink(); ?>">
                                         <?php the_post_thumbnail( 'post-thumbnail', ['class' => '', 'title' => 'Feature image' ] ); ?>
                                     </a>
