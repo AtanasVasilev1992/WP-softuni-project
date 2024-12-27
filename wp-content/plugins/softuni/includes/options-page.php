@@ -23,9 +23,9 @@ function my_softuni_custum_plugin_settings_init() {
 
     // Add a field for the text input
     add_settings_field(
-        'softunit_category_products_per_page',                          // Field ID
+        'softuni_category_products_per_page',                          // Field ID
         __( 'Number of products for the category archive', 'softuni' ), // Label for the field
-        'softunit_category_products_per_page_callback',                 // Callback function for rendering the field
+        'softuni_category_products_per_page_callback',                 // Callback function for rendering the field
         'softuni_my_custom_options',                                    // Page where the field will be displayed
         'custom_plugin_main_section'                                    // Section where the field belongs
     );
@@ -50,12 +50,12 @@ function softuni_plugin_section_callback() {
 /**
  * Callback function for rendering the text field.
  */
-function softunit_category_products_per_page_callback() {
+function softuni_category_products_per_page_callback() {
     // Retrieve the existing value from the database
     $options = get_option( 'softuni_my_custom_options' );
-    $value   = isset( $options[ 'softunit_category_products_per_page'] ) ? esc_attr( $options[ 'softunit_category_products_per_page' ] ) : '';
+    $value   = isset( $options[ 'softuni_category_products_per_page'] ) ? esc_attr( $options[ 'softuni_category_products_per_page' ] ) : '';
     ?>
-    <input type="text" name="softuni_my_custom_options[softunit_category_products_per_page]" value="<?php echo $value; ?>" />
+    <input type="text" name="softuni_my_custom_options[softuni_category_products_per_page]" value="<?php echo $value; ?>" />
     <p class="description"><?php esc_html_e( 'Set a number of products per page for the cagegory achive.', 'softuni' ); ?></p>
     <?php
 }
