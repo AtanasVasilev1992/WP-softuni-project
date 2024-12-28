@@ -20,6 +20,7 @@ function softuni_enqueue_assets() {
     wp_enqueue_style( 'magnific-popup.css', get_stylesheet_directory_uri() . '/assets/css/magnific-popup.css', array(), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_style( 'animate.css', get_stylesheet_directory_uri() . '/assets/css/animate.css', array(), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_style( 'meanmenu.min.css', get_stylesheet_directory_uri() . '/assets/css/meanmenu.min.css', array(), SOFTUNI_FRUITS_THEME_VER );
+    wp_enqueue_style( 'contact-form-styles', get_template_directory_uri() . '/assets/css/contact-form.css', array(), SOFTUNI_FRUITS_THEME_VER );
     wp_enqueue_style( 'responsive.css', get_stylesheet_directory_uri() . '/assets/css/responsive.css', array(), SOFTUNI_FRUITS_THEME_VER );
 
     // From Footer
@@ -137,3 +138,22 @@ function custom_search_query($query) {
     return $query;
 }
 add_filter('pre_get_posts', 'custom_search_query');
+
+function softuni_enqueue_contact_scripts() {
+    if (is_page_template('contact.php')) {
+        wp_enqueue_script(
+            'contact-form-handler', 
+            get_template_directory_uri() . '/assets/js/contact-form.js', 
+            array('jquery'), 
+            '1.0.0', 
+            true
+        );
+
+        wp_localize_script(
+            'contact-form-handler',
+            'my_ajax_object',
+            array('ajax_url' => admin_url('admin-ajax.php'))
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'softuni_enqueue_contact_scripts');
