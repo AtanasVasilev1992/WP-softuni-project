@@ -126,3 +126,33 @@ function softuni_get_contact_form_settings() {
         'enable' => isset( $options[ 'contact_form_enable' ] ) ? (bool) $options[ 'contact_form_enable' ] : true
     ];
 }
+
+// Add filter for Contact Form 7 submission
+add_action('wpcf7_before_send_mail', 'custom_cf7_before_send_mail');
+
+function custom_cf7_before_send_mail($contact_form) {
+    $settings = softuni_get_contact_form_settings();
+    
+    if (!$settings['enable']) {
+        return;
+    }
+
+    $submission = WPCF7_Submission::get_instance();
+    if ($submission) {
+        $mail = $contact_form->prop('mail');
+        $mail['recipient'] = $settings['email'];
+        $contact_form->set_properties(['mail' => $mail]);
+    }
+}
+
+// Add admin notice if Contact Form is disabled
+add_action('admin_notices', 'contact_form_status_notice');
+
+function contact_form_status_notice() {
+    $settings = softuni_get_contact_form_settings();
+    if (!$settings['enable']) {
+        echo '<div class="notice notice-warning is-dismissible">';
+        echo '<p>Contact Form is currently disabled. Enable it in Settings -> Contact Form.</p>';
+        echo '</div>';
+    }
+}

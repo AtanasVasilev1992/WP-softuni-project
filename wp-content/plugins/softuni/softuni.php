@@ -24,3 +24,4 @@
  require 'includes/options-page.php';
  require 'includes/ajax-search.php';
  require 'includes/contact-options-page.php';
+ require 'includes/form-handler.php';

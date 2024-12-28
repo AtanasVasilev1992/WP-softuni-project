@@ -108,3 +108,15 @@ function softuni_theme_category_archive_query( $query ) {
 };
 
 add_action( 'pre_get_posts', 'softuni_theme_category_archive_query' );
+
+
+add_action('phpmailer_init', 'custom_phpmailer_setup');
+function custom_phpmailer_setup($phpmailer) {
+    $phpmailer->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+}
