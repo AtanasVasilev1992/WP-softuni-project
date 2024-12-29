@@ -140,7 +140,8 @@ function custom_search_query($query) {
 add_filter('pre_get_posts', 'custom_search_query');
 
 function softuni_enqueue_contact_scripts() {
-    if (is_page_template('contact.php')) {
+    // Проверяваме дали сме на страницата с контактната форма
+    if (is_page_template('contact.php') || is_page('contact') || is_page('homepage')) {
         wp_enqueue_script(
             'contact-form-handler', 
             get_template_directory_uri() . '/assets/js/contact-form.js', 

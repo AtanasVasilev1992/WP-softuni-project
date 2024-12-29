@@ -8,21 +8,43 @@
                 </div>
                 <div id="form_status"></div>
                 <div class="contact-form">
-                    <form method="POST" id="fruits-contact" class="contact-form">
-                        <?php wp_nonce_field( 'contact_form_submit', 'contact_nonce' ); ?>
+                    <form method="POST" id="fruits-contact" class="contact-form" onsubmit="return false;">
+                        <?php wp_nonce_field('contact_form_submit', 'contact_nonce'); ?>
                         <p>
-                            <input type="text" placeholder="Name" name="contact_name" id="name" required
-                                pattern="[A-Za-z\s]+" title="Please enter a valid name">
-                            <input type="email" placeholder="Email" name="contact_email" id="email" required>
+                            <input type="text"
+                                placeholder="Name"
+                                name="contact_name"
+                                id="name"
+                                required>
+
+                            <input type="email"
+                                placeholder="Email"
+                                name="contact_email"
+                                id="email"
+                                required>
                         </p>
                         <p>
-                            <input type="tel" placeholder="Phone" name="contact_phone" id="phone" required
-                                pattern="[0-9+\s-]{10,}" title="Please enter a valid phone number">
-                            <input type="text" placeholder="Subject" name="contact_subject" id="subject" required>
+                            <input type="tel"
+                                placeholder="Phone"
+                                name="contact_phone"
+                                id="phone"
+                                pattern="[0-9]{10}"
+                                title="Please enter a valid phone number (10 digits)"
+                                required>
+
+                            <input type="text"
+                                placeholder="Subject"
+                                name="contact_subject"
+                                id="subject"
+                                required>
                         </p>
                         <p>
-                            <textarea name="contact_message" id="message" cols="30" rows="10"
-                                placeholder="Message" required minlength="10"></textarea>
+                            <textarea name="contact_message"
+                                id="message"
+                                cols="30"
+                                rows="10"
+                                placeholder="Message"
+                                required></textarea>
                         </p>
                         <div id="form_status"></div>
                         <p><input type="submit" value="Submit"></p>

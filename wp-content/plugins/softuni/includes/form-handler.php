@@ -42,6 +42,13 @@ function handle_contact_form_submission() {
         $message
     );
 
+    error_log('Form submission data: ' . print_r($_POST, true));
+    
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        wp_send_json_success('Test message logged (local environment)');
+        return;
+    }
+
     $mail_sent = wp_mail($to, $subject, $email_content, $headers);
 
     if ($mail_sent) {
